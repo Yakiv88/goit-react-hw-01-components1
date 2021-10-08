@@ -1,44 +1,20 @@
-import './App.css'
-import { Gallery } from './components/Gallery/Gallery'
-import Title from './components/Title/Title'
-const galleryImages = {
-  title: 'Images',
-  description: 'Best images in the World!!!',
-  images: [
-    {
-      id: '1',
-      source:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Lotus_Exige_Sport_410%2C_Paris_Motor_Show_2018%2C_IMG_0306.jpg/1200px-Lotus_Exige_Sport_410%2C_Paris_Motor_Show_2018%2C_IMG_0306.jpg',
-    },
-    {
-      id: '2',
-      source:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Lotus_Elise_Sport_220%2C_Paris_Motor_Show_2018%2C_IMG_0277.jpg/274px-Lotus_Elise_Sport_220%2C_Paris_Motor_Show_2018%2C_IMG_0277.jpg',
-    },
-  ],
-}
-const { title, description, images } = galleryImages
+import statistics from "./components/Statistic/statistical-data.json";
+import frends from "./components/Frends/Frendsaray.json";
+import Statisticlist from "./components/Statistic/Statisticlistjs.js";
+import Profillist from "./components/Profil/Profil";
+import Frendslist from "./components/Frends/Frendslist";
+import Transactions from "./components/Transactions/Transactions.json";
+import Transactionslist from "./components/Transactions/Transactionslist";
+
 function App() {
   return (
-    <div className="App">
-      FE-35 Module 1 Lesson 1
-      <Gallery i={images}>
-        {/* IF */}
-        {title === 'images' && <Title value={title} />}
-        {/* IF */}
-
-        {/* if...else = TERNARY */}
-        {title === 'Images' ? (
-          <h2>Условие выполнено</h2>
-        ) : (
-          <h2>Условие НЕ выполнено</h2>
-        )}
-        {/* if...else = TERNARY */}
-
-        <p>Just Text</p>
-      </Gallery>
+    <div>
+      {Profillist}
+      <Statisticlist items={statistics} />
+      <Frendslist items={frends} />
+      <Transactionslist items={Transactions} />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
